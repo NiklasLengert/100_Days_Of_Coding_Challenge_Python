@@ -1,0 +1,40 @@
+import random;
+
+word_list = ["fernseher", "kuehlschrank", "tastatur"]
+lives = 6
+
+word_choice = random.choice(word_list)
+print(word_choice)
+
+amount_of_blanks = len(word_choice)
+blank_holder = ""
+for blank in range(1, amount_of_blanks):
+    blank_holder += "_"
+print(blank_holder)
+
+game_over = False
+already_choosen_letters = []
+
+while not game_over:
+    user_guess = input('Please guess a letter: ').lower()
+    display = ""
+
+    for letter in word_choice:
+        if(letter == user_guess):
+            already_choosen_letters.append(letter)
+            display += letter
+        elif(letter in already_choosen_letters):
+            display += letter
+        else:
+            display += "_"
+    print(display)
+
+    if user_guess not in word_choice:
+        lives -= 1
+        if lives == 0:
+            game_over = True
+            print("You lose.")
+
+    if("_" not in display):
+        game_over = True
+        print("You win.")

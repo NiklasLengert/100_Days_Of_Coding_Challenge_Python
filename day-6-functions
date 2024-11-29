@@ -1,0 +1,15 @@
+# def my_function():
+#     print("Hello")
+#     print("Bye")
+
+#on the website reeborgs world are certain functions like move() predefined 
+#this exercise is mostly done on the website so this is only an example
+# maze_solver_in_reeborgs_world():
+#     while not at_goal():
+#         if(right_is_clear()):
+#             turn_right()
+#             move()
+#         elif(front_is_clear()):
+#             move()
+#         else:
+#             turn_left()
